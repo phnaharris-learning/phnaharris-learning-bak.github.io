@@ -8,6 +8,8 @@ const posts = (await getCollection("blog")).sort(
 );
 
 const last_posts = posts.slice(0, 3);
+
+const blog_url = "https://phnaharris.github.io/blog";
 ---
 
 <BaseLayout>
@@ -17,24 +19,62 @@ const last_posts = posts.slice(0, 3);
     <div class="text-3xl py-3 font-bold">Software Engineer</div>
     <div class="py-2">
       <text class="text-lg">
-        Hi everyone, I'm Anh, or you can call me Harris. I'm a Computer Science
-        student in VNUHCM - University of Science. I have a passion for
-        Blockchain programming, Ethereum, cryptocurrency and something related.
-        Currently I'm learning about Blockchain and Solidity, and I also looking
-        for an internship in that field. Please let me know via messaging or
-        email for me by phnanh.harris@gmail.com if you are looking for intern
-        and feel interested in my curriculum vitae. I also have a Vietnamese
-        personal blog at here. Browse it and you'll read many posts about some
-        topics that interest me like technology, wine, and motorbikes. Starting
-        to work while studying in university was an opportunity and a challenge
-        for me in my career as a programmer. The first experiences on this road
-        help me a lot in work and life, have more lessons and friends that are
-        important in my career path later.
+        Hi everyone, I'm Anh, or you can call me Harris. <br />
+        I'm a Computer Science student in VNUHCM - University of Science. I have
+        a passion for Blockchain programming, Ethereum, cryptocurrency and something
+        related. Currently I'm learning about Blockchain and Solidity, and I also
+        looking for an internship in that field. Please let me know via messaging
+        or email for me by
+        <a
+          class="highlight-link"
+          href="mailto:phnanh.harris@gmail.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          phnanh.harris@gmail.com
+        </a>
+        if you are looking for intern and feel interested in my
+        <a
+          class="highlight-link"
+          href="./assets/cv/[CV][Nam Anh Pham Hoang (Harris)].pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          curriculum vitae
+        </a>. I also have a Vietnamese personal blog at <a
+          class="highlight-link"
+          href={blog_url}
+          target="_blank"
+          rel="noreferrer"
+        >
+          here
+        </a>
+        . Browse
+        <a
+          class="highlight-link"
+          href={blog_url}
+          target="_blank"
+          rel="noreferrer"
+        >
+          it
+        </a>
+        and you'll read many posts about some topics that interest me like technology,
+        wine, and motorbikes. <br /> Starting to work while studying in university
+        was an opportunity and a challenge for me in my career as a programmer. The
+        first experiences on this road help me a lot in work and life, have more
+        lessons and friends that are important in my career path later.
       </text>
     </div>
     <div class="mt-8">
       <a class="btn" href="https://github.com/phnaharris" target="_blank">
         Let's connect!</a
+      >
+      <a
+        class="btn"
+        href="./assets/cv/[CV][Nam Anh Pham Hoang (Harris)].pdf"
+        target="_blank"
+      >
+        Browse my CV (PDF)</a
       >
     </div>
   </div>
