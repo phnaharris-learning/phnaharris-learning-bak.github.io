@@ -50,18 +50,20 @@ Nguyên lý chung của các hệ thống Symmetric-key Encryption là dùng **m
 
 Trong mật mã học, Mật mã Caesar, còn gọi là mật mã dịch chuyển, là một trong những mật mã đơn giản và được biết đến nhiều nhất. Hệ mã Caesar là một hệ mã hóa thay thế đơn âm, làm việc trên bảng chữ cái tiếng Anh 27 ký tự. Đó là một dạng của mật mã thay thế, trong đó mỗi ký tự trong văn bản được thay thế bằng một ký tự cách nó một đoạn trong bảng chữ cái để tạo thành bản mã.
 
-Giả sử Alice và Bob có hàm ![](<https://latex.codecogs.com/svg.latex?\small\color{white}t(x)>){: style="padding: 4px"} là hàm chuyển từ ký tự sang số (![](https://latex.codecogs.com/svg.latex?\small\color{white}t(A)=1, t(B)=2,...,t(Z)=26){: style="padding: 3px"}), với ![](https://latex.codecogs.com/svg.latex?\small\color{white}m = t(x)){: style="padding: 3px"} là nội dung tin nhắn, khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_e = 5){: style="padding: 3px"}.
-Ta có hàm mã hóa: ![](https://latex.codecogs.com/svg.latex?\small\color{white}c = E(K_e, m) = m + K_e = t(x) + K_e){: style="padding: 4px"}.
-Ta có hàm giải mã: ![](https://latex.codecogs.com/svg.latex?\small\color{white}m = D(K_e, c) = c - K_e = t(x) - K_e){: style="padding: 4px"}.
+Giả sử Alice và Bob có hàm ![](<https://latex.codecogs.com/svg.latex?\small\color{white}t(x)>) là hàm chuyển từ ký tự sang số ![](<https://latex.codecogs.com/svg.latex?\small\color{white}t(A)=1,t(B)=2,...,t(Z)=26>) với ![](<https://latex.codecogs.com/svg.latex?\small\color{white}m=t(x)>) là nội dung tin nhắn, khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_e=5)
+Ta có hàm mã hóa: ![](<https://latex.codecogs.com/svg.latex?\small\color{white}c=E(K_e,m)=m+K_e=t(x)+K_e>)
+Ta có hàm giải mã: ![](<https://latex.codecogs.com/svg.latex?\small\color{white}m=D(K_e,c)=-K_e=t(x)-K_e>)
 
-Để mã hóa kí tự **A**, với khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_e = 6){: style="padding: 3px"}, ta nhận được
+Để mã hóa kí tự **A**, với khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_e=6)
+ta nhận được
 
 <div align="center">
     <img src="https://latex.codecogs.com/svg.latex?\small\color{white}c = E(K_e, m) = m + K_e = t(x) + K_e = t(A) + K_e = 2 + 5 = 6 = F." alt="c = E(K_e, m) = m + K_e = t(x) + K_e = t(A) + K_e = 1 + 5 = 6 = F" style="padding: 3px"/>    
 </div>
 <br>
 
-Để giải mã kí tự **F**, với khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_e = 6){: style="padding: 3px"}, ta nhận được
+Để giải mã kí tự **F**, với khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_e=6)
+ta nhận được
 
 <div align="center">
     <img src="https://latex.codecogs.com/svg.latex?\small\color{white}m = D(K_e, c) = c - K_e = t(x) - K_e = t(F) - K_e = 7 - 5 = 1 = A." alt="m = D(K_e, c) = c - K_e = t(x) - K_e = t(F) - K_e = 6 - 5 = 1 = A" style="padding: 3px"/>    
@@ -77,7 +79,7 @@ Mật mã Caesar có thể dễ dàng bị phá, bằng một số cách:
 
 - **Frequency Analysis (Phân tích tần suất)**: Nguyên lý của phương pháp này là trong mỗi ngôn ngữ, mỗi ký tự trong bảng chữ cái có một tần suất xuất hiện nhất định. Từ việc phân tích tần suất xuất hiện của các kí tự trong bản mã và tần suất xuất hiện của các ký tự hoặc nhóm ký tự trong ngôn ngữ đó, ta có thể dự đoán ký tự hoặc nhóm ký tự trong bản mã tương ứng với ký tự hay nhóm ký tự nào trong thực tế. Cách tấn công này được dùng thường xuyên trong các hệ thống mật mã ở những thời kỳ đầu.
 - **Known Plaintext Attack (Tấn công khi đã biết bản rõ)**: Cách tấn công này dựa vào việc đã tìm được một vài cặp bản rõ - bản mã, từ đó suy ra khóa được dùng và dùng khóa đã tìm được để giải những bản mã còn lại.
-- **Brute Force (Vét cạn)**: Dễ nhận thấy rằng chỉ có 26 trường hợp có thể sử dụng làm khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_e){: style="padding: 3px"} tương ứng với 25 kí tự còn lại trong bảng chữ cái (trường hợp khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_e = 26){: style="padding: 3px"} cho ra kết quả giống với trường hợp ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_e = 0){: style="padding: 3px"}, nghĩa là kí tự sau khi mã hóa không đổi so với kí tự ban đầu).
+- **Brute Force (Vét cạn)**: Dễ nhận thấy rằng chỉ có 26 trường hợp có thể sử dụng làm khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_e) tương ứng với 25 kí tự còn lại trong bảng chữ cái (trường hợp khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_e=26) cho ra kết quả giống với trường hợp ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_e=0) nghĩa là kí tự sau khi mã hóa không đổi so với kí tự ban đầu).
 
 ### Xác thực danh tính với hệ thống mã hóa khóa đối xứng
 
@@ -92,7 +94,7 @@ Giả sử Alice gửi cho Bob một đoạn tin nhắn đã được mã hóa k
 - Biết được có đúng Alice gửi cho mình đoạn tin nhắn đó hay không.
 
 Nhu cầu này dẫn đến phát sinh một tình huống: Làm sao để Alice và Bob chia sẻ khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_a){: style="padding: 4px"} cho nhau một cách an toàn, khi mà kết nối hiện tại của họ đang bị một bên khác nghe lén?
-Tình huống này có thể giải quyết bằng cách hai người gửi khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_a){: style="padding: 4px"} cho nhau trước khi trao đổi thông điệp bằng một vài cách an toàn hơn (gửi trực tiếp chẳng hạn), nhưng nhìn chung việc này gây khó khăn ít nhiều và đây là điểm yếu của phương pháp mã hóa khóa đối xứng, rằng khó có thể truyền tin an toàn trong một môi trường kết nối không an toàn.
+Tình huống này có thể giải quyết bằng cách hai người gửi khóa ![](https://latex.codecogs.com/svg.latex?\small\color{white}K_a) cho nhau trước khi trao đổi thông điệp bằng một vài cách an toàn hơn (gửi trực tiếp chẳng hạn), nhưng nhìn chung việc này gây khó khăn ít nhiều và đây là điểm yếu của phương pháp mã hóa khóa đối xứng, rằng khó có thể truyền tin an toàn trong một môi trường kết nối không an toàn.
 
 Để khắc phục điểm yếu này, ta sẽ tiếp tục tìm hiểu về hệ thống mã hóa bất đối xứng.
 
@@ -135,9 +137,9 @@ Hầu hết các blockchain ngày nay không có PKI được tích hợp sẵn,
 
 # One-way function (trapdoor function) [^7]
 
-One-way function, hay hàm một chiều, là một khái niệm trong khoa học máy tính. One-way function được định nghĩa là một hàm (một hoặc nhiều biến, ở đây ta gọi một cách đơn giản là hàm ![](https://latex.codecogs.com/svg.latex?\small\color{white}y = f(x)){: style="padding: 4px"}) mà khi ta có được đối số đầu vào ![](https://latex.codecogs.com/svg.latex?\small\color{white}x){: style="padding: 3px"} thì có thể dễ dàng tính toán được giá trị ![](https://latex.codecogs.com/svg.latex?\small\color{white}y){: style="padding: 3px"}, nhưng ngược lại nếu ta có giá trị ![](https://latex.codecogs.com/svg.latex?\small\color{white}y){: style="padding: 3px"} thì không thể (hoặc rất khó) tìm được đối số ![](https://latex.codecogs.com/svg.latex?\small\color{white}x){: style="padding: 3px"} (lưu ý ở đây một toàn ánh không đủ điều kiện để được xem là một one-way function). Trong các bài sau, ta sẽ tìm hiểu sâu hơn về một số hàm được xem là one-way function thông qua các hàm băm mật mã (hash function) như SHA-256.
+One-way function, hay hàm một chiều, là một khái niệm trong khoa học máy tính. One-way function được định nghĩa là một hàm (một hoặc nhiều biến, ở đây ta gọi một cách đơn giản là hàm ![](<https://latex.codecogs.com/svg.latex?\small\color{white}y=f(x)>) mà khi ta có được đối số đầu vào ![](https://latex.codecogs.com/svg.latex?\small\color{white}x) thì có thể dễ dàng tính toán được giá trị ![](https://latex.codecogs.com/svg.latex?\small\color{white}y) nhưng ngược lại nếu ta có giá trị ![](https://latex.codecogs.com/svg.latex?\small\color{white}y) thì không thể (hoặc rất khó) tìm được đối số ![](https://latex.codecogs.com/svg.latex?\small\color{white}x) (lưu ý ở đây một toàn ánh không đủ điều kiện để được xem là một one-way function). Trong các bài sau, ta sẽ tìm hiểu sâu hơn về một số hàm được xem là one-way function thông qua các hàm băm mật mã (hash function) như SHA-256.
 
-Thực tế là không một hàm nào có thể được chứng minh là một one-way function một cách tuyệt đối vì cho dù chiều ngược lại (suy từ ![](https://latex.codecogs.com/svg.latex?\small\color{white}y){: style="padding: 4px"} ra ![](https://latex.codecogs.com/svg.latex?\small\color{white}x){: style="padding: 3px"}) có khó đến như thế nào đi chăng nữa thì ta vẫn chưa thể chứng minh là hoàn toàn không thể tìm ra cách tính ![](https://latex.codecogs.com/svg.latex?\small\color{white}x){: style="padding: 3px"} từ ![](https://latex.codecogs.com/svg.latex?\small\color{white}y){: style="padding: 3px"}.
+Thực tế là không một hàm nào có thể được chứng minh là một one-way function một cách tuyệt đối vì cho dù chiều ngược lại (suy từ ![](https://latex.codecogs.com/svg.latex?\small\color{white}y) ra ![](https://latex.codecogs.com/svg.latex?\small\color{white}x)) có khó đến như thế nào đi chăng nữa thì ta vẫn chưa thể chứng minh là hoàn toàn không thể tìm ra cách tính ![](https://latex.codecogs.com/svg.latex?\small\color{white}x) từ ![](https://latex.codecogs.com/svg.latex?\small\color{white}y)
 
 Trên đây là những kiến thức khá cơ bản về các hệ thống mã hóa thông tin mà mình tổng hợp được qua khóa học và hành trình tìm kiếm thông tin của mình. Mong mọi người đã có những cái nhìn đầu tiên rõ ràng hơn về blockchain và Bitcoin. Ở bài viết sau, mình sẽ đề cập chi tiết hơn về các hàm băm mật mã (hash function) và những tính chất của chúng để bạn đọc có thể hiểu hơn tại sao Bitcoin và các blockchain lại cần dùng các hash function này và ưu nhược điểm của các phương pháp nổi bật. Nếu bạn thấy bài viết này hay, đừng ngần ngại chia sẽ cho những người có cùng sự quan tâm với chúng ta nhé.
 
